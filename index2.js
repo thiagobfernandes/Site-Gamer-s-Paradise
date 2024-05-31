@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, '/')));
 //rota
 app.get("/" , function(req, res) {
   
-    res.render('index.php');
+    res.render('index.html');
 })
 
 app.post("/send_email", function(req, res){
