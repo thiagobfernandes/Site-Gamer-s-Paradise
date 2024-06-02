@@ -30,7 +30,7 @@ app.set('view engine', 'php');
 
 app.get("/" , function(req, res) {
   
-    res.render('index');
+    res.render('index.php');
 })
 
 app.post("/send_email", function(req, res){
@@ -66,12 +66,12 @@ app.post("/send_email", function(req, res){
         }  
 
         
-    })
+    });
 
 })
 
 
 // inicialize web server
-server.listen(process.env.PORT||port, function(){
-    console.log("starting server on port ")
+server.listen(process.env.PORT || port, function(){
+    console.log("starting server on port " + port)
 })
