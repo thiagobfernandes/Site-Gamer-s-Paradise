@@ -9,7 +9,7 @@ const phpExpress = require('php-express')({
 
 var app = express();
 var server= http.Server(app);
-port=3000;
+port=8888;
 app.set("port", port);
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
