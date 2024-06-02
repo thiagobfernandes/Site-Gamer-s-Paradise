@@ -1,46 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt_BR">
+<main>
+   
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/b3b83db5db.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
-  
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tilt+Neon&display=swap');
-  </style>
+
+    
+    
+    
 
 
 
-  <title>Games Paradise</title>
-</head>
-
-<body>
-  <header>
-    <div class="logo">
-      <img src="imagem/Screenshot_2024-05-21_195422-removebg-preview.png" alt="">
-    </div>
-    <div class="links">
-      <nav>
-        <ul>
-          <li><a href="#Jogar">JOGOS</a></li>
-          <li> <a class=" d-none  d-md-block" href="#Destaquepc">DESTAQUES</a>                              <a class="d-md-none" href="#Destaques">DESTAQUES</a></li>
-          <li> <a href="paginas/jogo1.php">DESENVOLVEDORES</a></li>
-          <li><a href="#Formulario">CONTATOS</a></li>
-        </ul>
-        
-       
-       
-        
-      </nav>
 
 
-    </div>
-  </header>
-  <main>
+
+
 <div class="pc d-md-block my-2">
   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -86,15 +57,17 @@
       </div>
     </div>
     
-    <div class="desaparecer">
-    
-      <div class="cards  bg-dark text-light" style="width: 18rem;">
-        <img src="imagem/capa2.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p class="card-text p-md-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="">
+      <div class="desaparecer">
+      
+        <div class="cards  bg-dark text-light" style="width: 18rem;">
+          <img src="imagem/capa2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text p-md-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
     
     <div class="desaparecer">
     <div class="cards  bg-dark text-light" style="width: 18rem;">
@@ -336,35 +309,3 @@
 
 
   </main>
-  <footer class="p-2 text-center text-light py-5">
-  <h4>Desenvolvido por <br> Thiago Borges Fernandes</h3>
-
-  <div class="redes">
-    <a class="text-light px-2 fs-4" href=""><i class="fa-brands fa-instagram"></i></a>
-    <a  class="text-light px-2 fs-4"  href=""><i class="fa-brands fa-github"></i></a>
-    <a class="text-light px-2 fs-4"   href=""><i class="fa-brands fa-facebook"></i></a>
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
-    <script src="script/index.js"></script>
-
-
-
-
-
-</body>
-
-</html>

@@ -2,6 +2,9 @@ var express = require('express');
 var http= require('http');
 var nodemailer = require('nodemailer');
 const path = require('path');
+const phpExpress = require('php-express')({
+  binPath: 'C:\\xampp\\php\\php.exe'
+});
 
 
 var app = express();
@@ -14,9 +17,20 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, '/')));
 
 //rota
+app.engine('php', phpExpress.engine);
+app.set('views', path.join(__dirname, '/'));
+app.set('view engine', 'php');
+
+
+
+
+
+
+
+
 app.get("/" , function(req, res) {
   
-    res.render('index.html');
+    res.render('index');
 })
 
 app.post("/send_email", function(req, res){
