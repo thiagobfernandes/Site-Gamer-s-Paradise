@@ -72,6 +72,6 @@ app.post("/send_email", function(req, res){
 
 
 // inicialize web server
-server.listen(process.env.PORT || port, function(){
+server.listen( port, function(){
     console.log("starting server on port " + port)
 })
