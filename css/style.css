@@ -1,0 +1,137 @@
+.desaparecer {
+  opacity: 0;
+  filter: blur(15px);
+  transition: all 1s;
+  transform: translateX(-100%); }
+
+.aparecer {
+  opacity: 1;
+  filter: blur(0);
+  transition: all 1s;
+  transform: translateX(0); }
+
+.cardprincipal:nth-child(2) {
+  transition-delay: 400ms; }
+
+.cardprincipal:nth-child(3) {
+  transition-delay: 700ms; }
+
+.jogos:nth-child(2) {
+  transition-delay: 400ms; }
+
+.jogos:nth-child(3) {
+  transition-delay: 700ms; }
+
+.jogos:nth-child(4) {
+  transition-delay: 1000ms; }
+
+.jogos:nth-child(5) {
+  transition-delay: 1300ms; }
+
+.jogos:nth-child(6) {
+  transition-delay: 1600ms; }
+
+header a {
+  width: 50%; }
+  header a .navbar-brand {
+    width: 100%; }
+  header a img {
+    width: 100%; }
+header .container-fluid {
+  background-color: #0d0c14; }
+header .navbar-collapse ul {
+  padding: 0; }
+header .navbar-collapse a,
+header .navbar-collapse a:hover {
+  color: #04c8cb;
+  text-decoration: none; }
+header .navbar-collapse li {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 3px;
+  margin-right: 10px; }
+header .navbar-collapse li:last-child {
+  margin-right: 0; }
+header .navbar-collapse li:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease; }
+header .navbar-collapse li:hover:after {
+  width: 100%;
+  background: blue; }
+header .navbar-collapse a {
+  font-size: 11px;
+  text-decoration: none;
+  color: #FFFFFF;
+  margin: 0 4px;
+  font-family: "Oswald", sans-serif; }
+
+footer {
+  background-color: #0d0c14; }
+  footer .footerzada {
+    background-color: #0d0c14; }
+
+    .swiper {
+      width: 600px;
+      height: 300px;
+    }
+main {
+  background-color: #0d0c14; }
+  main .carrocel img {
+    height: 180px; }
+  main .jogos {
+    padding-top: 60px; }
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.navbar-collapse{
+  flex-grow: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 500px) {
+  header {
+    display: flex;
+    align-items: center; }
+    header a {
+      width: 40%; }
+      header a .navbar-brand {
+        width: 30%; }
+      header a img {
+        width: 40%; }
+    header .navbar-collapse ul li a {
+      font-family: "Oswald", sans-serif; }
+
+  main .carrocel img {
+    height: 450px; } }
+@media (max-width: 800px) {
+  main .carrocel img {
+    height: 200px; } }
+
+/*# sourceMappingURL=style.css.map */

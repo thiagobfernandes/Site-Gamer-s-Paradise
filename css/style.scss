@@ -1,0 +1,241 @@
+$fundo:#0d0c14;
+$imagem:80%;
+$letra: #FFFFFF;
+$fontecel: 11px;
+$fontepc: 20px;
+$zero: 0;
+$fonte: "Oswald", sans-serif;
+
+
+.desaparecer {
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 1s;
+    transform: translateX(-100%);
+}
+
+.aparecer {
+    opacity: 1;
+    filter: blur(0);
+    transition: all 1s;
+    transform: translateX(0);
+}
+
+
+.cardprincipal:nth-child(2) {
+    transition-delay: 400ms;
+
+}
+
+.cardprincipal:nth-child(3) {
+    transition-delay: 700ms;
+}
+
+
+.jogos:nth-child(2) {
+    transition-delay: 400ms;
+}
+
+.jogos:nth-child(3) {
+    transition-delay: 700ms;
+}
+
+.jogos:nth-child(4) {
+    transition-delay: 1000ms;
+}
+
+.jogos:nth-child(5) {
+    transition-delay: 1300ms;
+}
+
+.jogos:nth-child(6) {
+    transition-delay: 1600ms;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+header{
+    
+        a{
+            width: 50%; 
+            .navbar-brand{
+                width: 100%
+                
+        }
+        
+        img{
+            width: 100%;
+        }
+        
+
+    }
+
+    .container-fluid{
+        background-color: $fundo;
+
+     
+       
+        
+    }
+
+
+    .navbar-collapse {
+        ul {
+            padding: $zero;
+        }
+
+
+        a,
+        a:hover {
+            color: #04c8cb;
+            text-decoration: none;
+        }
+
+        li {
+            display: inline-block;
+            position: relative;
+            padding-bottom: 3px;
+            margin-right: 10px;
+        }
+
+        li:last-child {
+            margin-right: 0;
+        }
+
+        li:after {
+            content: '';
+            display: block;
+            margin: auto;
+            height: 3px;
+            width: 0px;
+            background: transparent;
+            transition: width .5s ease, background-color .5s ease;
+        }
+
+        li:hover:after {
+            width: 100%;
+            background: blue;
+        }
+
+
+
+        a {
+
+            font-size: $fontecel;
+            text-decoration: none;
+            color: $letra;
+            margin: 0 4px;
+            font-family: "Oswald", sans-serif;
+
+
+        }
+
+
+    }
+
+
+
+
+
+
+  
+  
+ 
+
+   } 
+
+
+footer {
+    background-color: #0d0c14;
+    .footerzada{
+        background-color: #0d0c14;
+    }
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
+//home
+main{
+    background-color: $fundo;
+    .carrocel{
+        img{
+            height: 180px;
+        }
+    
+    }
+
+    .jogos{
+        padding-top:60px;
+    }
+    
+
+
+}
+
+
+
+@media(min-width:500px){
+    header{
+        display: flex;
+        align-items: center;
+    a{
+        width: 40%; 
+        .navbar-brand{
+            width: 30%;
+            
+    }
+    
+    img{
+        width: 40%;
+    }
+    
+
+}
+
+.navbar-collapse{
+   ul {
+    li{
+        a{
+           
+            font-family: $fonte;
+        }
+    }
+   }
+
+}
+
+
+}
+
+main {
+    .carrocel {
+        img{
+            height: 450px;
+        }
+    }
+}
+
+
+}
+
+@media(max-width:800px) {
+    main {
+        .carrocel {
+            img{
+                height: 200px;
+            }
+        }
+    }
+}
