@@ -52,7 +52,7 @@ $base_url="http://localhost/projeto/imagem/";
   </div>
 </nav>
     </header>
-<main>
+<main class="w-100">
 <?php 
   if(isset($_GET["param"])) {
     $p= explode("/", $_GET["param"]);
