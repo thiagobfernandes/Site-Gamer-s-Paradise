@@ -1,5 +1,5 @@
 <?php 
-$url="http://localhost/novosite/api/games.php/";
+$url="http://localhost/novosite/api/games.php";
 $dados=file_get_contents($url);
 
 $dados=json_decode($dados);
@@ -50,7 +50,7 @@ $dados=json_decode($dados);
   <div class="swiper-wrapper">
     <!-- Slides -->
     <div class="swiper-slide d-flex justify-content-center">
-    <div class="card" style="width: 15rem; ;">
+    <div class="card" style="width: 15rem; ">
   <img src="imagem/capa2.jpg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title text-center">Arte da Ocultação</h5>
@@ -149,7 +149,16 @@ $dados=json_decode($dados);
 
 
 
+<?php 
+$url="http://localhost/projeto/api/games.php/";
+$dados=file_get_contents($url);
+$dados=json_decode($dados);
 
+
+
+
+
+?>
 
 
 
@@ -178,14 +187,14 @@ $dados=json_decode($dados);
             foreach($dados as $arquivos){
               ?>
       
-      <div class=" col-12 col-sm-6 col-md-4 d-flex justify-content-center align-items-center p-4">
+      <div class=" col-12 col-sm-6 col-md-4 d-flex justify-content-center align-items-center ">
         
                     <div class="desaparecer">
-                    <div class="card bg-dark text-light "  style="width: 18rem;">
-                      <img src="<?=$base_url?>/<?=$arquivos -> capa?>" class="card-img-top" alt="...">
+                    <div class="card bg-dark text-light my-3 "  style="width: 18rem; ">
+                      <img src="<?=$base_url?>/<?=$arquivos -> capa?>" class="card-img-top" alt="..." style="height:200px;">
                       <div class="card-body text-center">
-                        <div class="card-text m-2"><strong><?=$arquivos -> nome ?></strong></div>
-                            <a href="index.php?pg" class="btn btn-success mb-2"> Jogar agora  <i class="fa-solid fa-play"></i></a>
+                        <div class="card-text my-3"><strong><?=$arquivos -> nome ?></strong></div>
+                            <a href="jogos/<?=$arquivos -> id?>" class="btn btn-success mb-2"> Jogar agora  <i class="fa-solid fa-play"></i></a>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<?=$arquivos->id?>">
                                 Mais Informações <i class="fa-solid fa-info pl-2"></i>
                             </button>
@@ -208,7 +217,7 @@ $dados=json_decode($dados);
         <div class="sinopse text-center">
           <h3 class="text-center text-light"> Sobre <strong><?=$arquivos -> nome ?></strong></h2>
           <P class="text-center text-light justify-content-center"><?=$arquivos -> descricao ?></p>
-          <a href="index.php?pg" class="btn btn-success mb-2 "> Jogar agora  <i class="fa-solid fa-play"></i></a>
+          <a href="jogos/<?=$arquivos -> id?>" class="btn btn-success mb-2 "> Jogar agora  <i class="fa-solid fa-play"></i></a>
 
 
 

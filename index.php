@@ -1,6 +1,6 @@
 <?php 
-$url="http://localhost/novosite/api/games.php/";
-$base_url="http://localhost/novosite/imagem/";
+$url="http://localhost/projeto/api/games.php/";
+$base_url="http://localhost/projeto/imagem/";
 
 
 
@@ -13,6 +13,7 @@ $base_url="http://localhost/novosite/imagem/";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gamer's Paradise</title>
+    <base href="http://localhost/projeto/">
     <link rel="shortcut icon" href="imagem/computer-game.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -20,11 +21,11 @@ $base_url="http://localhost/novosite/imagem/";
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
- 
+
 
   </head>
   <body>
-    <header class=" w-100 ">
+    <header class=" w-100 headerjogo">
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-0 m-0 w-100">
   <div class="container-fluid d-flex justify-content-between">
     <a class="navbar-brand" href="index.php?pg=home"><img  src="imagem/logo.png" alt=""></a>
@@ -34,13 +35,13 @@ $base_url="http://localhost/novosite/imagem/";
     <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
       <ul class="navbar-nav  mb-2 mb-lg-0 ">
         <li class="nav-item">
-          <a class="nav-link text-light fs-5"  href="index.php?pg=home">Home</a>
+          <a class="nav-link text-light fs-5"  href="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light fs-5" href="index.php?pg=contatos">Contato</a>
+          <a class="nav-link text-light fs-5" href="contato">Contato</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light fs-5" href="index.php?pg=desenvolvedores" >Desenvolvedores</a>
+          <a class="nav-link text-light fs-5" href="Desenvolvedores" >Desenvolvedores</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light fs-5" >Jogos</a>
@@ -53,12 +54,20 @@ $base_url="http://localhost/novosite/imagem/";
     </header>
 <main>
 <?php 
-  $pg = $_GET["pg"] ?? "home";
-  $pgPath = "paginas/{$pg}.php";
+  if(isset($_GET["param"])) {
+    $p= explode("/", $_GET["param"]);
+  }
+  $page= $p[0] ?? "home";
+  $codigo=$p[1] ?? NULL;
 
-  if (file_exists($pgPath)) {
-    include $pgPath;
-  } 
+  $pagina="paginas/$page.php";
+
+  if(file_exists($pagina)) {
+    include $pagina;
+  } else {
+    include "paginas/erro.php";
+  }
+   
    
   ?>
 </main>

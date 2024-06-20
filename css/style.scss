@@ -6,6 +6,11 @@ $fontepc: 20px;
 $zero: 0;
 $fonte: "Oswald", sans-serif;
 
+body{
+    height: 100vb;
+    background-color: #0d0c14;
+    width: 100%;
+}
 
 .desaparecer {
     opacity: 0;
@@ -55,13 +60,84 @@ $fonte: "Oswald", sans-serif;
 
 
 
+.main_jogo{
+    
+    height: 600px;
+    display: flex;
+    justify-content: end;
+    
+    align-items: center;
+    flex-direction: column;
+    width: 80% !important;
+    font-family: $fonte;
+   
+
+    
+    
+   a {
+    text-decoration: none;
+    button{
+    
+        font-family: Roboto, sans-serif;
+        font-weight: 0;
+        font-size: 14px;
+        color: black;
+        background-color: #30cf36;
+        padding: 10px 30px;
+        border: none;
+        box-shadow: none;
+        border-radius: 50px;
+        transition : 303ms;
+        transform: translateY(0);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        font-weight: bold;
+        margin: 20px;
+        }
+   }
+   img{
+    width: 100%;
+    height:540px ;
+   }
+    a {
+
+        button:hover{
+        
+    
+            transition : 303ms;
+            padding: 10px 38px;
+            transform : translateY(-0px);
+            background-color: #21b31c;
+            color: #3e00db;
+            border: solid 0px #22009c;
+            
+            }
+
+            i{
+                margin-left: 4px;
+            }
+    } 
+    
+  
+    
+   
+    
+    
+
+   
+}
 
 
-
-
-
-
-
+.desc_jogo{
+    margin-left: 48px;
+    margin-top: 24px;
+    margin-right: 48px;
+    text-align: center;
+ 
+    
+}
 
 
 header{
@@ -146,11 +222,28 @@ header{
 
 
 
-
-
   
   
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    } 
 

@@ -1,3 +1,8 @@
+body {
+  height: 100vb;
+  background-color: #0d0c14;
+  width: 100%; }
+
 .desaparecer {
   opacity: 0;
   filter: blur(15px);
@@ -30,6 +35,53 @@
 
 .jogos:nth-child(6) {
   transition-delay: 1600ms; }
+
+.main_jogo {
+  height: 600px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  width: 80% !important;
+  font-family: "Oswald", sans-serif; }
+  .main_jogo a {
+    text-decoration: none; }
+    .main_jogo a button {
+      font-family: Roboto, sans-serif;
+      font-weight: 0;
+      font-size: 14px;
+      color: black;
+      background-color: #30cf36;
+      padding: 10px 30px;
+      border: none;
+      box-shadow: none;
+      border-radius: 50px;
+      transition: 303ms;
+      transform: translateY(0);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 20px; }
+  .main_jogo img {
+    width: 100%;
+    height: 540px; }
+  .main_jogo a button:hover {
+    transition: 303ms;
+    padding: 10px 38px;
+    transform: translateY(0px);
+    background-color: #21b31c;
+    color: #3e00db;
+    border: solid 0px #22009c; }
+  .main_jogo a i {
+    margin-left: 4px; }
+
+.desc_jogo {
+  margin-left: 48px;
+  margin-top: 24px;
+  margin-right: 48px;
+  text-align: center; }
 
 header a {
   width: 50%; }
@@ -75,45 +127,16 @@ footer {
   footer .footerzada {
     background-color: #0d0c14; }
 
-    .swiper {
-      width: 600px;
-      height: 300px;
-    }
+.swiper {
+  width: 600px;
+  height: 300px; }
+
 main {
   background-color: #0d0c14; }
   main .carrocel img {
     height: 180px; }
   main .jogos {
     padding-top: 60px; }
-
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.navbar-collapse{
-  flex-grow: 0 !important;
-}
-
-
-
-
-
-
-
-
-
-
 
 @media (min-width: 500px) {
   header {
