@@ -187,10 +187,10 @@ $dados=json_decode($dados);
             foreach($dados as $arquivos){
               ?>
       
-      <div class=" col-12 col-sm-6 col-md-4 d-flex justify-content-center align-items-center ">
+      <div class=" col-12 col-sm-6 col-md-4 d-flex justify-content-center align-items-center  ">
         
-                    <div class="desaparecer">
-                    <div class="card bg-dark text-light my-3 "  style="width: 18rem; ">
+                    <div class="desaparecer ">
+                    <div class="card bg-dark text-light my-3  "  style="width: 18rem; ">
                       <img src="<?=$base_url?>/<?=$arquivos -> capa?>" class="card-img-top" alt="..." style="height:200px;">
                       <div class="card-body text-center">
                         <div class="card-text my-3"><strong><?=$arquivos -> nome ?></strong></div>
@@ -205,18 +205,23 @@ $dados=json_decode($dados);
                     </div>
                   </div>
                    <!-- Modal -->
-                   <div class="modal fade w-100" id="modal<?=$arquivos -> id?>" tabindex="-1" aria-labelledby="ModalLabel<?=$arquivos -> id?>" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content bg-dark">
-      <div class="modal-header bg-dark text-light">
-        <h1 class="modal-title fs-5" id="ModalLabel<?=$arquivos -> id?>"> <?=$arquivos ->nome ?></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body bg-dark">
-        <img src="<?=$base_url?>/<?=$arquivos -> banner ?>" class="w-100" alt="">
+                   <div class="modal fade w-100 " id="modal<?=$arquivos -> id?>" tabindex="-1" aria-labelledby="ModalLabel<?=$arquivos -> id?>" aria-hidden="true">
+  <div class="modal-dialog p-0">
+    <div class="modal-content bg-dark ">
+    <img src="<?=$base_url?>/<?=$arquivos -> banner ?>" class="w-100" alt="">
+      
+      
+        
+      
+      <div class="modal-body bg-dark p-0" id="ModalLabel<?=$arquivos -> id?>">>
+       
         <div class="sinopse text-center">
           <h3 class="text-center text-light"> Sobre <strong><?=$arquivos -> nome ?></strong></h2>
-          <P class="text-center text-light justify-content-center"><?=$arquivos -> descricao ?></p>
+          <P class="text-center text-light justify-content-center px-4 fs-6"><?=$arquivos -> descricao ?></p>
+          <div class="flex">
+            <h5 class="text-center text-light ">Desenvolvido por <?=$arquivos -> criador ?></h3>
+            <p class="text-center text-light px-4 fs-5">Aluno(a) do Centro Universitário Integrado, Cursando o 1° Periodo de Análise e Desenvolvimento de Sistemas</p>
+          </div>
           <a href="jogos/<?=$arquivos -> id?>" class="btn btn-success mb-2 "> Jogar agora  <i class="fa-solid fa-play"></i></a>
 
 
@@ -224,7 +229,7 @@ $dados=json_decode($dados);
         </div>
        
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer border-0">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
     
                  </div>
