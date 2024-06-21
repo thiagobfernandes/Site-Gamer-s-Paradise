@@ -1,6 +1,7 @@
 <?php 
 $url="http://localhost/projeto/api/games.php/";
 $base_url="http://localhost/projeto/imagem/";
+$url_destaque="http://localhost/projeto/api/destaques.php/";
 
 
 
@@ -28,7 +29,7 @@ $base_url="http://localhost/projeto/imagem/";
     <header class=" w-100 headerjogo">
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-0 m-0 w-100">
   <div class="container-fluid d-flex justify-content-between">
-    <a class="navbar-brand" href="index.php?pg=home"><img  src="imagem/logo.png" alt=""></a>
+    <a class="navbar-brand" href="home"><img  src="imagem/logo.png" alt=""></a>
     <button class="navbar-toggler text-light " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span><i class="fa-solid fa-bars"></i></span>
     </button>
@@ -38,13 +39,13 @@ $base_url="http://localhost/projeto/imagem/";
           <a class="nav-link text-light fs-5"  href="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light fs-5" href="contato">Contato</a>
+          <a class="nav-link text-light fs-5" href="home/#myform">Contato</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light fs-5" href="Desenvolvedores" >Desenvolvedores</a>
+          <a class="nav-link text-light fs-5" href="desenvolvedores" >Desenvolvedores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light fs-5" >Jogos</a>
+          <a href="home/#jogos"   class="nav-link text-light fs-5" >Jogos</a>
         </li>
       </ul>
      
@@ -102,6 +103,7 @@ $base_url="http://localhost/projeto/imagem/";
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/ad33ce79da.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="scripts/index.js"></script>
+<script src="scripts/fslightbox.js"></script>
 <script> 
  const swiper = new Swiper('.swiper', {
   // Optional parameters
