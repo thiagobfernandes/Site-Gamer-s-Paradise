@@ -17,7 +17,7 @@ $dados=json_decode($dados);
 
 
 
-    <section class="carrocel">
+    <section class="carrocel mb-4">
 
     <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
@@ -43,45 +43,46 @@ $dados=json_decode($dados);
 
     </section>
 
-    <section class="destaque_celular d-md-none">
-        <h2 class="text-center text-light py-2 ">Destaques</h2>
-        <div class="swiper w-100">
+    <section class="destaque_celular d-md-none  mb-4" >
+    <h2 class="text-center text-light"> Destaques </h2>
+    <div class="swiper w-100" style="height:500px;">
   <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
+  <div class="swiper-wrapper m4-3" >
+    <?php 
+   $url_destaques="http://localhost/projeto/api/destaques.php/";
+   $dades=file_get_contents($url_destaques);
+   $dades=json_decode($dades);
+       
+   foreach($dades as $arquivoszada){
+    
+    ?>
+    
+    <div class="swiper-slide d-flex justify-content-center mt-5">
+    <a href="jogos/<?=$arquivoszada -> id?>">
+                    <div class="card bg-dark text-light" style="width: 18rem;">
+                      <img src="<?=$base_url?>/<?=$arquivoszada -> capa?>" class="card-img-top" alt="...">
+                      <div class="card-body text-center">
+                  </a>
+                      <p class="card-text text-center fs-5"><?=$arquivoszada -> nome?></p>
+                      <a href="jogos/<?=$arquivoszada -> id?>" class="btn btn-success mb-2"> Jogar agora  <i class="fa-solid fa-play"></i></a>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<?=$arquivoszada->id?>">
+                                Mais Informações <i class="fa-solid fa-info pl-2"></i>
+                            </button>
+                    </div>
+
+                  </div>
+     
+    </div>
+    <?php 
+    
+    
+    
+   }
+    ?>
+
+  
     <!-- Slides -->
-    <div class="swiper-slide d-flex justify-content-center">
-    <div class="card" style="width: 15rem; ">
-  <img src="imagem/capa2.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title text-center">Arte da Ocultação</h5>
     
-  </div>
-</div>
-
-
-    </div>
-    <div class="swiper-slide d-flex justify-content-center ">
-    <div class="card" style="width: 15rem; ">
-  <img src="imagem/capa2.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title text-center">Parabellum</h5>
-    <
-    
-  </div>
-</div>
-
-
-    </div>
-    <div class="swiper-slide d-flex justify-content-center"> 
-    <div class="card" style="width: 15rem;">
-  <img src="imagem/capa2.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title text-center">Piratas</h5>
-    
-    
-  </div>
-</div>
-    </div>
     
   </div>
   <!-- If we need pagination -->
@@ -94,56 +95,61 @@ $dados=json_decode($dados);
   <!-- If we need scrollbar -->
   <div class="swiper-scrollbar"></div>
 </div>
+      
+
+
+
+
+
+
 
 </section>
     <h2 class="text-light text-center py-3 d-none d-sm-block"> Destaques</h2>
+    <section class="d-none d-sm-flex justify-content-center text-center align-items-center">
     <?php 
+    $url_destaque="http://localhost/projeto/api/destaques.php/";
+    $Dados=file_get_contents($url_destaque);
+    $Dados=json_decode($Dados);
+   
+    foreach($Dados as $destaque){
+      ?>
+     
+                <div class="biblioteca d-flex flex-md-wrap flex-md-row p-md-1 desaparecer flex-column justify-content-center align-items-center gap-2  ">
+                  <div class="desaparecer">
+                  <a href="jogos/<?=$destaque -> id?>">
+                    <div class="card bg-dark text-light" style="width: 18rem;">
+                      <img src="<?=$base_url?>/<?=$destaque -> capa?>" class="card-img-top" alt="...">
+                      <div class="card-body">
+                  </a>
+                      <p class="card-text"><?=$destaque -> nome?></p>
+                      <a href="jogos/<?=$destaque -> id?>" class="btn btn-success mb-2"> Jogar agora  <i class="fa-solid fa-play"></i></a>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal<?=$destaque->id?>">
+                                Mais Informações <i class="fa-solid fa-info pl-2"></i>
+                            </button>
+                    </div>
+
+                  </div>
+                </div>
+              
+
+
+
+
+
+      <?php 
+
+      
+    }
     
     
     
     ?>
-    <section class="d-none d-sm-flex justify-content-center text-center align-items-center">
+    
         
        
-    <a href="index.php?pg=jogo2">
-                <div class="biblioteca d-flex flex-md-wrap flex-md-row p-md-1 desaparecer flex-column justify-content-center align-items-center gap-2  ">
-                  <div class="desaparecer">
-                  <div class="card bg-dark text-light" style="width: 18rem;">
-                    <img src="imagem/capa2.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
+    
 
-              <a href="index.php?pg=jogo2">
-                <div class="biblioteca d-flex flex-md-wrap flex-md-row p-md-1 desaparecer flex-column justify-content-center align-items-center gap-2  ">
-                  <div class="desaparecer">
-                  <div class="card bg-dark text-light" style="width: 18rem;">
-                    <img src="imagem/capa2.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-              <a href="index.php?pg=jogo2">
-                <div class="biblioteca d-flex flex-md-wrap flex-md-row p-md-1 desaparecer flex-column justify-content-center align-items-center gap-2  ">
-                  <div class="desaparecer">
-                  <div class="card bg-dark text-light" style="width: 18rem;">
-                    <img src="imagem/capa2.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-
-
-
-
+              
 
     </section>
 
@@ -174,7 +180,7 @@ $dados=json_decode($dados);
 
 
 
-    <section class= "container">
+    <section class= "container" id="jogos">
      
 
     <div class="row">
@@ -187,7 +193,7 @@ $dados=json_decode($dados);
             foreach($dados as $arquivos){
               ?>
       
-      <div class=" col-12 col-sm-6 col-md-4 d-flex justify-content-center align-items-center  ">
+      <div class=" col-12  col-md-6 col-lg-4 d-flex justify-content-center align-items-center  ">
         
                     <div class="desaparecer ">
                     <div class="card bg-dark text-light my-3  "  style="width: 18rem; ">
@@ -216,11 +222,11 @@ $dados=json_decode($dados);
       <div class="modal-body bg-dark p-0" id="ModalLabel<?=$arquivos -> id?>">>
        
         <div class="sinopse text-center">
-          <h3 class="text-center text-light"> Sobre <strong><?=$arquivos -> nome ?></strong></h2>
+          <h3 class="text-center text-light mb-1 mt-0"> Sobre <strong><?=$arquivos -> nome ?></strong></h2>
           <P class="text-center text-light justify-content-center px-4 fs-6"><?=$arquivos -> descricao ?></p>
           <div class="flex">
             <h5 class="text-center text-light ">Desenvolvido por <?=$arquivos -> criador ?></h3>
-            <p class="text-center text-light px-4 fs-5">Aluno(a) do Centro Universitário Integrado, Cursando o 1° Periodo de Análise e Desenvolvimento de Sistemas</p>
+            <p class="text-center text-light px-4 fs-6">Aluno(a) do Centro Universitário Integrado, Cursando o 1° Periodo de Análise e Desenvolvimento de Sistemas</p>
           </div>
           <a href="jogos/<?=$arquivos -> id?>" class="btn btn-success mb-2 "> Jogar agora  <i class="fa-solid fa-play"></i></a>
 
@@ -230,7 +236,7 @@ $dados=json_decode($dados);
        
       </div>
       <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary mb-4" data-bs-dismiss="modal">Close</button>
     
                  </div>
                </div>
