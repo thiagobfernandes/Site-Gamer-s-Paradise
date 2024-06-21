@@ -116,6 +116,8 @@ main {
         width: 30%; }
       header a img {
         width: 40%; }
+      header a body {
+        padding-top: 100px; }
     header .navbar-collapse ul li a {
       font-family: "Oswald", sans-serif; }
 
