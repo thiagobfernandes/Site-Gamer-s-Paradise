@@ -1,5 +1,5 @@
 <?php
-$url="http://localhost/projeto/api/games.php";
+$url="https://teste4-production.up.railway.app/api/games.php/";
 $dados=file_get_contents($url);
 $dados= json_decode($dados);
 $dados= $dados -> $codigo;
@@ -29,6 +29,11 @@ $dados= $dados -> $codigo;
                 <p class="fs-3"><?=$dados -> descricao?></p>
 
 
+            </div>
+
+            <div class="erro d-block d-sm-none d-md-none d-lg-none">
+               
+                <p class="text-center text-light">Infelizmente o jogo <?=$dados -> nome ?> não esta disponivel para o Dispositivo Movel</p>
             </div>
 
 
