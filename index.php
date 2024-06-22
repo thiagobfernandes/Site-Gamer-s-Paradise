@@ -1,7 +1,7 @@
 <?php 
-$url="https://teste4-production.up.railway.app/api/games.php/";
+$url="https://teste4-production.up.railway.app/api/games.php";
 $base_url="https://teste4-production.up.railway.app/imagem/";
-$url_destaque="https://teste4-production.up.railway.app/api/destaques.php/";
+$url_destaque="https://teste4-production.up.railway.app/api/destaques.php";
 
 
 
