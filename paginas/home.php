@@ -49,7 +49,7 @@ $dados=json_decode($dados);
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper m4-3" >
     <?php 
-   $url_destaques="http://localhost/projeto/api/destaques.php/";
+   $url_destaques="https://teste4-production.up.railway.app/api/destaques.php/";
    $dades=file_get_contents($url_destaques);
    $dades=json_decode($dades);
        
