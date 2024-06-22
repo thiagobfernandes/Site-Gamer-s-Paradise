@@ -55,6 +55,56 @@ $url_destaque="https://teste4-production.up.railway.app/api/destaques.php";
     </header>
 <main class="w-100">
 <?php 
+/ Defina suas URLs de API e base aqui
+$url = "https://teste4-production.up.railway.app/api/games.php";
+$base_url = "https://teste4-production.up.railway.app/imagem/";
+$url_destaque = "https://teste4-production.up.railway.app/api/destaques.php";
+
+// Função para capturar a requisição e determinar a página a ser carregada
+function routeRequest() {
+    $requestUri = $_SERVER['REQUEST_URI'];
+    $scriptName = $_SERVER['SCRIPT_NAME'];
+
+    // Remove o script name da URI
+    $baseUri = str_replace(basename($scriptName), '', $scriptName);
+    $requestUri = str_replace($baseUri, '', $requestUri);
+
+    // Remove query string da URI
+    if (strpos($requestUri, '?') !== false) {
+        $requestUri = strstr($requestUri, '?', true);
+    }
+
+    // Remove barra inicial
+    $requestUri = trim($requestUri, '/');
+
+    // Padrão: carrega a página inicial se não houver caminho especificado
+    if (empty($requestUri)) {
+        $requestUri = 'home';
+    }
+
+    // Retorna o caminho da página requisitada
+    return $requestUri;
+}
+
+// Determina a página e o código (se houver)
+$page = routeRequest();
+$pagina = "paginas/$page.php";
+
+// Verifica se a página existe e a inclui, caso contrário, inclui a página de erro
+if (file_exists($pagina)) {
+    include $pagina;
+} else {
+    include "paginas/erro.php";
+}
+?>
+
+
+
+
+
+
+
+
   if(isset($_GET["param"])) {
     $p= explode("/", $_GET["param"]);
   }
