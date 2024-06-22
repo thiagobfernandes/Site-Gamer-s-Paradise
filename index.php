@@ -55,71 +55,65 @@ $url_destaque="https://teste4-production.up.railway.app/api/destaques.php";
     </header>
 <main class="w-100">
 <?php 
-/ Defina suas URLs de API e base aqui
-$url = "https://teste4-production.up.railway.app/api/games.php";
-$base_url = "https://teste4-production.up.railway.app/imagem/";
-$url_destaque = "https://teste4-production.up.railway.app/api/destaques.php";
-
-// Função para capturar a requisição e determinar a página a ser carregada
 function routeRequest() {
-    $requestUri = $_SERVER['REQUEST_URI'];
-    $scriptName = $_SERVER['SCRIPT_NAME'];
+  $requestUri = $_SERVER['REQUEST_URI'];
+  $scriptName = $_SERVER['SCRIPT_NAME'];
 
-    // Remove o script name da URI
-    $baseUri = str_replace(basename($scriptName), '', $scriptName);
-    $requestUri = str_replace($baseUri, '', $requestUri);
+  // Remove o script name da URI
+  $baseUri = str_replace(basename($scriptName), '', $scriptName);
+  $requestUri = str_replace($baseUri, '', $requestUri);
 
-    // Remove query string da URI
-    if (strpos($requestUri, '?') !== false) {
-        $requestUri = strstr($requestUri, '?', true);
-    }
+  // Remove query string da URI
+  if (strpos($requestUri, '?') !== false) {
+      $requestUri = strstr($requestUri, '?', true);
+  }
 
-    // Remove barra inicial
-    $requestUri = trim($requestUri, '/');
+  // Remove barra inicial
+  $requestUri = trim($requestUri, '/');
 
-    // Padrão: carrega a página inicial se não houver caminho especificado
-    if (empty($requestUri)) {
-        $requestUri = 'home';
-    }
+  // Padrão: carrega a página inicial se não houver caminho especificado
+  if (empty($requestUri)) {
+      $requestUri = 'home';
+  }
 
-    // Retorna o caminho da página requisitada
-    return $requestUri;
+  // Retorna o caminho da página requisitada
+  return $requestUri;
 }
 
 // Determina a página e o código (se houver)
 $page = routeRequest();
+$parts = explode("/", $page);
+$page = $parts[0] ?? "home";
+$codigo = $parts[1] ?? NULL;
+
 $pagina = "paginas/$page.php";
 
 // Verifica se a página existe e a inclui, caso contrário, inclui a página de erro
 if (file_exists($pagina)) {
-    include $pagina;
+  include $pagina;
 } else {
-    include "paginas/erro.php";
+  include "paginas/erro.php";
 }
-?>
 
+// Se houver um código, busca dados da API
+if ($codigo !== NULL) {
+  $url = $url_base . "games.php";
+  $dados = file_get_contents($url);
+  $dados = json_decode($dados, true);
+  $dados = $dados[$codigo] ?? NULL;
 
-
-
-
-
-
-
-  if(isset($_GET["param"])) {
-    $p= explode("/", $_GET["param"]);
-  }
-  $page= $p[0] ?? "home";
-  $codigo=$p[1] ?? NULL;
-
-  $pagina="paginas/$page.php";
-
-  if(file_exists($pagina)) {
-    include $pagina;
+  if ($dados === NULL) {
+      echo "Código não encontrado na API.";
   } else {
-    include "paginas/erro.php";
+      // Faça algo com os dados obtidos da API
+      // Por exemplo, você pode exibir os dados na página
+      echo "<pre>";
+      print_r($dados);
+      echo "</pre>";
   }
-   
-   
+}
+
+
   ?>
 </main>
 
