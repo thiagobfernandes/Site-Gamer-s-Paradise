@@ -1,5 +1,5 @@
 <?php 
-$url="http://localhost/novosite/api/games.php";
+$url="https://teste4-production.up.railway.app/";
 $dados=file_get_contents($url);
 
 $dados=json_decode($dados);
