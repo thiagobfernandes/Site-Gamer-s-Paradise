@@ -289,7 +289,7 @@ $dados=json_decode($dados);
 
 <div class="mb-3">
 <label for="email" class="form-label text-light">Email</label>
-<input type="email" class="form-control text-light"  required name="email" id="email" placeholder="email@exemplo.com">
+<input type="email" class="form-control "  required name="email" id="email" placeholder="email@exemplo.com">
 </div>
 <div class="mb-3">
 <label for="mensagem" class="form-label text-light">Assunto</label>
