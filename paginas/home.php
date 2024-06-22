@@ -1,7 +1,6 @@
 <?php 
 $url="https://teste4-production.up.railway.app/api/games.php";
 $dados=file_get_contents($url);
-
 $dados=json_decode($dados);
 
 
@@ -49,7 +48,7 @@ $dados=json_decode($dados);
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper m4-3" >
     <?php 
-   $url_destaques="https://teste4-production.up.railway.app/api/destaques.php/";
+   $url_destaques="https://teste4-production.up.railway.app/api/destaques.php";
    $dades=file_get_contents($url_destaques);
    $dades=json_decode($dades);
        
@@ -107,7 +106,7 @@ $dados=json_decode($dados);
     <h2 class="text-light text-center py-3 d-none d-sm-block"> Destaques</h2>
     <section class="d-none d-sm-flex justify-content-center text-center align-items-center">
     <?php 
-    $url_destaque="http://localhost/projeto/api/destaques.php/";
+    $url_destaque="https://teste4-production.up.railway.app/api/destaques.php";
     $Dados=file_get_contents($url_destaque);
     $Dados=json_decode($Dados);
    
@@ -156,7 +155,7 @@ $dados=json_decode($dados);
 
 
 <?php 
-$url="http://localhost/projeto/api/games.php/";
+$url="https://teste4-production.up.railway.app/api/games.php";
 $dados=file_get_contents($url);
 $dados=json_decode($dados);
 
