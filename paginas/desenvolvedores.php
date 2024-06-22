@@ -1,6 +1,6 @@
 
 <?php 
-$url="http://localhost/projeto/api/games.php/";
+$url="https://teste4-production.up.railway.app/api/games.php/";
 $dados=file_get_contents($url);
 $dados=json_decode($dados);
 
