@@ -55,65 +55,24 @@ $url_destaque="https://teste4-production.up.railway.app/api/destaques.php";
     </header>
 <main class="w-100">
 <?php 
-function routeRequest() {
-  $requestUri = $_SERVER['REQUEST_URI'];
-  $scriptName = $_SERVER['SCRIPT_NAME'];
 
-  // Remove o script name da URI
-  $baseUri = str_replace(basename($scriptName), '', $scriptName);
-  $requestUri = str_replace($baseUri, '', $requestUri);
 
-  // Remove query string da URI
-  if (strpos($requestUri, '?') !== false) {
-      $requestUri = strstr($requestUri, '?', true);
+  if(isset($_GET["param"])) {
+    $p= explode("/", $_GET["param"]);
   }
+  $page= $p[0] ?? "home";
+  $codigo=$p[1] ?? NULL;
+  // e o codigo da propriedade que vamos acessar, por exemplo o id
 
-  // Remove barra inicial
-  $requestUri = trim($requestUri, '/');
+  $pagina="paginas/$page.php";
 
-  // Padrão: carrega a página inicial se não houver caminho especificado
-  if (empty($requestUri)) {
-      $requestUri = 'home';
-  }
-
-  // Retorna o caminho da página requisitada
-  return $requestUri;
-}
-
-// Determina a página e o código (se houver)
-$page = routeRequest();
-$parts = explode("/", $page);
-$page = $parts[0] ?? "home";
-$codigo = $parts[1] ?? NULL;
-
-$pagina = "paginas/$page.php";
-
-// Verifica se a página existe e a inclui, caso contrário, inclui a página de erro
-if (file_exists($pagina)) {
-  include $pagina;
-} else {
-  include "paginas/erro.php";
-}
-
-// Se houver um código, busca dados da API
-if ($codigo !== NULL) {
-  $url = $url_base . "games.php";
-  $dados = file_get_contents($url);
-  $dados = json_decode($dados, true);
-  $dados = $dados[$codigo] ?? NULL;
-
-  if ($dados === NULL) {
-      echo "Código não encontrado na API.";
+  if(file_exists($pagina)) {
+    include $pagina;
   } else {
-      // Faça algo com os dados obtidos da API
-      // Por exemplo, você pode exibir os dados na página
-      echo "<pre>";
-      print_r($dados);
-      echo "</pre>";
+    include "paginas/erro.php";
   }
-}
-
-
+   
+   
   ?>
 </main>
 
