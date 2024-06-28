@@ -1,8 +1,16 @@
 body {
-  margin-top: 40px;
+  margin-top:60px;
+  padding-top:70px;
   height: 100vb;
   background-color: #0d0c14;
   width: 100%; }
+  
+  .titulos {
+      padding:30px;
+  }
+  .redes i:hover {
+      color:blue;
+  }
 
 .desaparecer {
   opacity: 0;
@@ -50,6 +58,13 @@ body {
   margin-top: 24px;
   margin-right: 48px;
   text-align: center; }
+  
+  header{
+      position:fixed;
+      top:0;
+      z-index:2;
+  }
+  
 
 header a {
   width: 50%; }
@@ -120,11 +135,34 @@ main {
         padding-top: 100px; }
     header .navbar-collapse ul li a {
       font-family: "Oswald", sans-serif; }
+      
+      body{
+          margin-top:80px;
+          padding-top:80px;
+      }
+      
+      .titulos {
+          margin-top:50px;
+          padding-top:50px;
+      }
 
   main .carrocel img {
     height: 450px; } }
 @media (max-width: 800px) {
   main .carrocel img {
-    height: 200px; } }
+    height: 200px; }
+    body{
+        padding-top:40px;
+    }
 
+    
+    
+    
+}
+@media (max-width: 1247px) {
+    body{
+        padding-top:20px;
+    }
+}
+    
 /*# sourceMappingURL=style.css.map */
