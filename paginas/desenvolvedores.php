@@ -1,6 +1,6 @@
 
 <?php 
-$url="https://teste4-production.up.railway.app/api/games.php";
+$url="https://gamers-paradisers.000webhostapp.com/api/games.php";
 $dados=file_get_contents($url);
 $dados=json_decode($dados);
 
@@ -30,7 +30,7 @@ $dados=json_decode($dados);
     <div class="row">
     
         
-          <h2 class="text-center text-light ">
+          <h2 class="text-center text-light titulos ">
               Desenvolvedores
             </h2>
             <?php

@@ -1,5 +1,5 @@
 <?php 
-$url="https://teste4-production.up.railway.app/api/games.php";
+$url="https://gamers-paradisers.000webhostapp.com/api/games.php";
 $dados=file_get_contents($url);
 $dados=json_decode($dados);
 
@@ -48,7 +48,7 @@ $dados=json_decode($dados);
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper m4-3" >
     <?php 
-   $url_destaques="https://teste4-production.up.railway.app/api/destaques.php";
+   $url_destaques="https://gamers-paradisers.000webhostapp.com/api/destaques.php";
    $dades=file_get_contents($url_destaques);
    $dades=json_decode($dades);
        
@@ -106,7 +106,7 @@ $dados=json_decode($dados);
     <h2 class="text-light text-center py-3 d-none d-sm-block"> Destaques</h2>
     <section class="d-none d-sm-flex justify-content-center text-center align-items-center">
     <?php 
-    $url_destaque="https://teste4-production.up.railway.app/api/destaques.php";
+    $url_destaque="https://gamers-paradisers.000webhostapp.com/api/destaques.php";
     $Dados=file_get_contents($url_destaque);
     $Dados=json_decode($Dados);
    
@@ -155,7 +155,7 @@ $dados=json_decode($dados);
 
 
 <?php 
-$url="https://teste4-production.up.railway.app/api/games.php";
+$url="https://gamers-paradisers.000webhostapp.com/api/games.php";
 $dados=file_get_contents($url);
 $dados=json_decode($dados);
 
@@ -179,13 +179,15 @@ $dados=json_decode($dados);
 
 
 
-    <section class= "container" id="jogos">
+    <section class= "container" >
      
 
     <div class="row">
+        <section id="jogos" class="my-5">
+</section>
     
         
-          <h2 class="text-center text-light ">
+          <h2 class="text-center text-light pt-2 py-md-5 ">
               JOGOS
             </h2>
             <?php
@@ -259,7 +261,9 @@ $dados=json_decode($dados);
    
 
 
-
+<section id="myform" class="m-2">
+    
+</section>
 
 
   
@@ -273,27 +277,27 @@ $dados=json_decode($dados);
     <section id="Formulario" class="formulario mx-md-5 py-md-3">
  
  <div class="contato  w-100 text-center " style="padding-top: 150px;" >   
-   <h2 class="text-light"> CONTATO</h2>
+   <h2 class="text-light""> CONTATO</h2>
    <p class="text-light">Enviar email</p>
 
 
 
  </div>
 
- <form method="post" id="myform"  action="./email.php" autocomplete="off " class="p-4 ">
+ <form method="post"  action="./index.php" autocomplete="off " class="p-4 ">
  <div class="mb-3">
 <label for="nome" class="form-label text-light">Digite seu nome</label>
-<input type="text" class="form-control"  required name="nome"  id="nome" placeholder="Digite seu nome" auto-comp>
+<input type="text" class="form-control"  name="nome"  id="nome" placeholder="Digite seu nome" autocomplete="off">
 </div> 
 
 
 <div class="mb-3">
 <label for="email" class="form-label text-light">Email</label>
-<input type="email" class="form-control "  required name="email" id="email" placeholder="email@exemplo.com">
+<input type="email" class="form-control "   name="email" id="email" placeholder="email@exemplo.com" autocomplete="off">
 </div>
 <div class="mb-3">
 <label for="mensagem" class="form-label text-light">Assunto</label>
-<textarea  class="form-control "  required  name="mensagem" id="mensagem" rows="3" placeholder="Digite aqui..."></textarea>
+<textarea  class="form-control "    name="mensagem" id="mensagem" rows="3" placeholder="Digite aqui..."></textarea>
 </div>
 
 
